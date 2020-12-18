@@ -1,0 +1,73 @@
+html, body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.text_font{
+    font-family: 'Fredoka One', cursive;
+    color: white;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    background-color: #217bb2;
+}
+
+main{
+    height: 85%;
+}
+
+.header_menu{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fa_icon{
+    color: white;
+}
+
+.hm_box{
+    display: flex;
+    height: 100%;
+    width: 33%;
+    flex-direction: column;
+    border-right: 0.1px solid;
+    border-right-color: white;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.hm_card{
+    width: 33%;
+}
+
+.hm_bet{
+    width: 33%;
+}
+
+.hm_exchange{
+    width: 34%;
+}
+
+.header_logo{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.hl_logo{
+    height: 100%;
+}
+
+.header_account{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
