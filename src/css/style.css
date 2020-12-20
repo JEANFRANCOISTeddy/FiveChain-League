@@ -71,3 +71,11 @@ main{
     align-items: center;
     justify-content: center;
 }
+
+a{
+    text-align: center;
+}
+
+a:hover{
+    text-decoration: none;
+}
