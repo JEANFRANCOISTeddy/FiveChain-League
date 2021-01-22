@@ -1,0 +1,24 @@
+{
+  "name": "fivechain-league",
+  "version": "1.0.0",
+  "description": "<!-- PROJECT LOGO -->\r <p align=\"center\">\r     <img src=\"https://image.noelshack.com/fichiers/2020/51/5/1608316320-fut-champions.png\" width=\"250\">\r </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JEANFRANCOISTeddy/FiveChain-League.git"
+  },
+  "author": "JEAN-FRANCOIS Teddy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JEANFRANCOISTeddy/FiveChain-League/issues"
+  },
+  "homepage": "https://github.com/JEANFRANCOISTeddy/FiveChain-League#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "web3": "^0.20.1"
+  }
+}
