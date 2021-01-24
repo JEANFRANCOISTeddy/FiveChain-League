@@ -33,12 +33,48 @@
                 <img class="hl_logo" src="/fivechain-league/src/img/logo.png">
             </div>
             <div class="header_account">
-                <h5 class="text_font">YOUR ACCOUNT ADDRESS : </h5>
-                <span class="account_address text_font"></span>
+                <h5 class="text_font">YOUR ACCOUNT ADDRESS : 
+                    <span class="account_address text_font"></span>
+                </h5>
             </div>
         </header>
 
-        <main></main>
+        <main class="container">
+
+            <div class="exchange_table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Staking Balance</th>
+                            <th scope="col">Reward Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span id="stakingBalance"></span> mDAI</td>
+                            <td><span id="fiveChainTokenBalance"></span> FCT</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <label class="float-left"><b>Stake tokens</b></label>
+                    <span class="float-right text-muted">Balance: <span id="daiTokenBalance"></span></span>
+                    <div class="input-group">
+                        <input type="number" class="form-control" name="dai_value" placeholder="0">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2"><img src="/fivechain-league/src/img/Dai.png" width="30px" style="padding-right: 10px;">mDAI</span>
+                        </div>
+                    </div>
+                    <div class="stakedButton">
+                        <center><button id="send" type="submit" class="btn btn-primary">Stake</button></center>
+                    </div>
+                </div>
+            </div>
+
+        </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/fivechain-league/src/js/script.js"></script>
     </body>

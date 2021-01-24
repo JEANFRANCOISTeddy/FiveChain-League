@@ -780,7 +780,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 759,
+                            "referencedDeclaration": 757,
                             "src": "675:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -931,7 +931,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 759,
+                                "referencedDeclaration": 757,
                                 "src": "825:4:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -1017,10 +1017,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        747,
-                        748
+                        745,
+                        746
                       ],
-                      "referencedDeclaration": 747,
+                      "referencedDeclaration": 745,
                       "src": "799:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1078,7 +1078,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 759,
+                            "referencedDeclaration": 757,
                             "src": "881:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -1242,7 +1242,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 759,
+                            "referencedDeclaration": 757,
                             "src": "967:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -1527,7 +1527,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 744,
+                            "referencedDeclaration": 742,
                             "src": "1126:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -1621,7 +1621,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 744,
+                          "referencedDeclaration": 742,
                           "src": "1190:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1939,10 +1939,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        747,
-                        748
+                        745,
+                        746
                       ],
-                      "referencedDeclaration": 747,
+                      "referencedDeclaration": 745,
                       "src": "1364:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2049,7 +2049,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 759,
+                                "referencedDeclaration": 757,
                                 "src": "1453:4:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -2120,10 +2120,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        747,
-                        748
+                        745,
+                        746
                       ],
-                      "referencedDeclaration": 747,
+                      "referencedDeclaration": 745,
                       "src": "1410:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2354,7 +2354,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 759,
+                            "referencedDeclaration": 757,
                             "src": "1572:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -3236,7 +3236,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 759,
+                            "referencedDeclaration": 757,
                             "src": "675:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -3387,7 +3387,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 759,
+                                "referencedDeclaration": 757,
                                 "src": "825:4:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -3473,10 +3473,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        747,
-                        748
+                        745,
+                        746
                       ],
-                      "referencedDeclaration": 747,
+                      "referencedDeclaration": 745,
                       "src": "799:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3534,7 +3534,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 759,
+                            "referencedDeclaration": 757,
                             "src": "881:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -3698,7 +3698,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 759,
+                            "referencedDeclaration": 757,
                             "src": "967:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -3983,7 +3983,7 @@
                             "name": "msg",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 744,
+                            "referencedDeclaration": 742,
                             "src": "1126:3:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_magic_message",
@@ -4077,7 +4077,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 744,
+                          "referencedDeclaration": 742,
                           "src": "1190:3:1",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -4395,10 +4395,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        747,
-                        748
+                        745,
+                        746
                       ],
-                      "referencedDeclaration": 747,
+                      "referencedDeclaration": 745,
                       "src": "1364:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4505,7 +4505,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 759,
+                                "referencedDeclaration": 757,
                                 "src": "1453:4:1",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -4576,10 +4576,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        747,
-                        748
+                        745,
+                        746
                       ],
-                      "referencedDeclaration": 747,
+                      "referencedDeclaration": 745,
                       "src": "1410:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -4810,7 +4810,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 759,
+                            "referencedDeclaration": 757,
                             "src": "1572:4:1",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_FiveChainToken_$367",
@@ -5195,13 +5195,12 @@
         }
       },
       "links": {},
-      "address": "0x6b4A4Bd21e7012f8c579dE14adC5F16a00bEec32",
-      "transactionHash": "0x3dfee8d94e9f2c670d4d6318240337ec8549807d5792463d5a18548c51c2c261"
+      "address": "0x41f1d8896070e7Aa670b8af6D5f1e444EB68e32e",
+      "transactionHash": "0xb85c091b2f6c6333c89a9bcb451cefa82b11990d609948621cf4a75679fe4f2a"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-01-21T14:05:15.490Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-01-23T19:11:23.197Z",
   "devdoc": {
     "methods": {}
   },

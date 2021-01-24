@@ -33,12 +33,70 @@
                 <img class="hl_logo" src="/fivechain-league/src/img/logo.png">
             </div>
             <div class="header_account">
-                <h5 class="text_font">YOUR ACCOUNT ADDRESS : </h5>
-                <span class="account_address text_font"></span>
+                <h5 class="text_font">YOUR ACCOUNT ADDRESS : 
+                    <span class="account_address text_font"></span>
+                </h5>
             </div>
         </header>
 
-        <main></main>
+        <main class="container">
+
+            <div class="card text-center mb-3">  
+                <div class="card text-center">
+                    <div class="card-header"><h4><b>All football players cards</b></h4></div>
+                        <div class="card-body" class="all_payers">
+
+                        </div>
+                    <div class="card-footer text-muted">
+                        <div>
+                            <button type="button" class="btn btn-success">Buy</button>
+                            <button type="button" class="btn btn-primary">Sell</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-5">
+                    <div class="card text-center mb-3">
+                        <div class="card-header"><h4><b>Create your own player</b></h4></div>
+                        <div class="card-body">
+                            <img id="imgPreview" src="" alt="" width="200px">
+                        </div>
+                        <div class="card-footer text-muted">
+                            <form id="form_create_player" method="POST">
+                                    <div class="input-group mb-3">
+                                        <label for="" class="input-group-text">Name : </label>
+                                        <input type="text" name="name" id="name" placeholder="Mbappe" class="form-control" >
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <label for="" class="input-group-text">Price : </label>
+                                        <input type="number" name="price" id="price" placeholder="0" class="form-control" >
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <label for="" class="input-group-text">Image : </label>
+                                        <input type="file" name="imgUrl" id="imgUrl" class="form-control" >
+                                    </div>
+                                <div>
+                                    <button id="create_button" type="button" class="btn btn-primary">Create</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-7">
+                    <div class="card text-center">
+                        <div class="card-header"><h4><b>Your football players cards</b></h4></div>
+                        <div class="card-body"></div>
+                        <div class="card-footer text-muted"></div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div id="file_path" style="display: none;"></div>
+        </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/fivechain-league/src/js/script.js"></script>
     </body>

@@ -10,7 +10,7 @@ module.exports = async  function(deployer, network, accounts) {
     await deployer.deploy(FiveChainToken);
     const fiveChainToken = await FiveChainToken.deployed();
 
-    await deployer.deploy(FiveChainTokenSale, FiveChainToken.address, DaiToken.address);
+    await deployer.deploy(FiveChainTokenSale, FiveChainToken.address, DaiToken.address, { gas:  });
     const fiveChainTokenSale = await FiveChainTokenSale.deployed();
 
     // Transfer all tokens to TokenFarm (1 million)

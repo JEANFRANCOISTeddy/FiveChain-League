@@ -65,6 +65,10 @@ main{
     height: 100%;
 }
 
+.container{
+    padding-top: 20px;;
+}
+
 .header_account{
     width: 25%;
     display: flex;
@@ -78,4 +82,26 @@ a{
 
 a:hover{
     text-decoration: none;
+}
+
+.exchange_table{
+    display: flex;
+    text-align: center;
+}
+
+.table thead th {
+    border: none;
+}
+
+.table td, .table th {
+    border: none;
+}
+
+.stakedButton{
+    padding-top: 10px;
+}
+
+.player_card:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }

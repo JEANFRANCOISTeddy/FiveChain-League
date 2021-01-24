@@ -5,7 +5,7 @@ web3.eth.defaultAccount = web3.eth.accounts[0];
 const fiveChainTokenAddr = '0x6b4A4Bd21e7012f8c579dE14adC5F16a00bEec32';
 const daiTokenAddr = '0xA2E259CBf680Ce59Cd475ab5BA1470334Edd7E43';
 const fiveChainTokenSaleAddr = '0x8Ee5082803bfCF415F21899bbaC4b7995Ded00b6';
-const playerCardAddr = '0x20D19C41E1E3d3E7D609797F844EA9637fF96986';
+const playerCardAddr = '0xF4178e0ef735Bc8401aD12bf7661F4C157C427DA';
 
 const fiveChainTokenAbi = [
     {
@@ -830,4 +830,78 @@ var FiveChainTokenSale = fiveChainTokenSaleContract.at(fiveChainTokenSaleAddr);
 var DaiToken = daiTokenContract.at(daiTokenAddr);
 var PlayerCard = playerCardContract.at(playerCardAddr);
 
-web3.eth.getAccounts(console.log);
+var accountAddr = web3.eth.accounts[1];
+var daiTokenBalance = DaiToken.balanceOf(accountAddr)['c'];
+var fiveChainTokenBalance = FiveChainToken.balanceOf(accountAddr)['c'];
+var stakingBalance = FiveChainTokenSale.balanceOf(accountAddr)['c'];
+
+console.log(daiTokenBalance);
+console.log(fiveChainTokenBalance);
+console.log(stakingBalance);
+
+$('#send').on('click', function() {
+  let amount = $('input[type=number][name=dai_value]').val();
+  console.log(amount);
+  FiveChainTokenSale.methods.depositTokens(amount).call({ from: accountAddr });
+});
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) {
+      $('#imgPreview').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+$("#imgUrl").change(function() {
+  readURL(this);
+});
+
+$(document).ready(function() {
+  $('.account_address').html(accountAddr);
+  $('#stakingBalance').html(stakingBalance);
+  $('#fiveChainTokenBalance').html(fiveChainTokenBalance);
+  $('#daiTokenBalance').html(daiTokenBalance);
+  
+  $('#create_button').on('click', function() {
+    var file = $('#imgUrl')[0].files[0];
+    var name = $('#name').val();
+    var price = $('#price').val();
+
+    /*var data = $('form').serialize();
+    console.log(file);*/
+
+    var form = new FormData();
+    form.append('imgUrl', file);
+    form.append('name', name);
+    form.append('price', price);
+
+    $.ajax({
+      type: 'POST',
+      url: '/fivechain-league/src/php/verify_file_input.php',
+      enctype: 'multipart/form-data',
+      data: form,
+      contentType: false,
+      processData: false,
+      success: function(data)
+      {
+        data = JSON.parse(data);
+        let path_file = data['path_file'];
+        PlayerCard.methods.createPlayer(name, path_file, price).call({ from: accountAddr }).then(function(result){
+          console.log(result);
+
+          let imgInput = "<img id='' class='player_card' onclick='cardValue()' src='" + path_file + "' width='150px' data-name='" + name + "' data-price='" + price + "'>";
+          imgInput = $.parseHTML(imgInput);
+          $('.all_payers').append(imgInput);
+
+        });
+
+      }
+    })
+  });
+
+});

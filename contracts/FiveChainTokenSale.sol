@@ -4,7 +4,6 @@ import "./DaiToken.sol";
 
 contract FiveChainTokenSale {
     string public name = "FiveChainToken Farm";
-    address payable public admin;
     FiveChainToken public tokenContract;
     DaiToken public daiToken;
     address public owner;
@@ -17,7 +16,7 @@ contract FiveChainTokenSale {
     event Sell(address _buyer, uint256 _amount);
 
     constructor(DaiToken _daiToken, FiveChainToken _tokenContract) public {
-        admin = msg.sender;
+        owner = msg.sender;
         daiToken=_daiToken;
         tokenContract = _tokenContract;
     }
