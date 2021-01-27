@@ -4931,12 +4931,13 @@
         }
       },
       "links": {},
-      "address": "0x33D5EEab546B6796F376Cf993f8Bc108f4eC2aDe",
-      "transactionHash": "0x04cd08f3f7478dea26e6f92d81f7097ae8ab69b004d8872d4f0cc66c8421186d"
+      "address": "0xE2e5aC9da4eBe4BB7B98f88c78a1376E09f5d54F",
+      "transactionHash": "0xaccd6e424eabb6f91aba03b22d9ab065d3a37131b5f79f1ce01e4a3f2820a5ea"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2021-01-23T19:11:23.194Z",
+  "updatedAt": "2021-01-25T17:54:57.439Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

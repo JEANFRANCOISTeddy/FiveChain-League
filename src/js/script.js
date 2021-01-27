@@ -2,10 +2,10 @@ web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
 web3.eth.defaultAccount = web3.eth.accounts[0];
 //web3.eth.sendTransaction({​​​​​from: 'myWallet', to: 'coinbaseWallet', value: web3.toWei(0.1,'ether'),gas: 5000, gasPrice: web3.toWei(40,'gwei')}​​​​​)
 
-const fiveChainTokenAddr = '0x6b4A4Bd21e7012f8c579dE14adC5F16a00bEec32';
-const daiTokenAddr = '0xA2E259CBf680Ce59Cd475ab5BA1470334Edd7E43';
-const fiveChainTokenSaleAddr = '0x8Ee5082803bfCF415F21899bbaC4b7995Ded00b6';
-const playerCardAddr = '0xF4178e0ef735Bc8401aD12bf7661F4C157C427DA';
+const fiveChainTokenAddr = '0x46BE0b7575f259c6Eb72e559f6022ff0419db726';
+const daiTokenAddr = '0xE2e5aC9da4eBe4BB7B98f88c78a1376E09f5d54F';
+const fiveChainTokenSaleAddr = '0x9561fF06d1A198a9Ab7EC893f2e8cb796F911151';
+const playerCardAddr = '0x16cB7F5B155A7496943819EBCd74807D5e3d57B8';
 
 const fiveChainTokenAbi = [
     {
@@ -842,7 +842,7 @@ console.log(stakingBalance);
 $('#send').on('click', function() {
   let amount = $('input[type=number][name=dai_value]').val();
   console.log(amount);
-  FiveChainTokenSale.methods.depositTokens(amount).call({ from: accountAddr });
+  FiveChainTokenSale.depositTokens(amount).call({ from: accountAddr });
 });
 
 function readURL(input) {
@@ -891,7 +891,8 @@ $(document).ready(function() {
       {
         data = JSON.parse(data);
         let path_file = data['path_file'];
-        PlayerCard.methods.createPlayer(name, path_file, price).call({ from: accountAddr }).then(function(result){
+
+        PlayerCard.createPlayer(name, path_file, price).call({ from: accountAddr }).then(function(result){
           console.log(result);
 
           let imgInput = "<img id='' class='player_card' onclick='cardValue()' src='" + path_file + "' width='150px' data-name='" + name + "' data-price='" + price + "'>";
