@@ -27,13 +27,25 @@ contract('fiveChainTokenSale', ([owner, investor]) => {
         it('has a name', async () => {
             const name = await daiToken.name()
             assert.equal(name, 'Mock DAI Token')
+        })     
+        
+        it('contract has symbol', async () => {
+            const name = await daiToken.symbol()
+            assert.equal(name, 'mDAI')
         })
     })
+
+    
 
     describe('FiveChainToken deployment', async () => {
         it('has a name', async () => {
             const name = await fiveChainToken.name()
             assert.equal(name, 'FiveChain Token')
+        })
+        
+        it('contract has symbol', async () => {
+            const name = await fiveChainToken.symbol()
+            assert.equal(name, 'FCT')
         })
     })
 

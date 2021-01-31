@@ -1,6 +1,9 @@
 pragma solidity ^0.5.0;
 
 contract PlayerCard {
+
+    uint256 public initialBalance = 50000; 
+
     event NewPlayer(uint playerId, string name, string imgUrl, uint price);
     
     struct Player {
@@ -20,6 +23,10 @@ contract PlayerCard {
     
     Player[] public players;
     
+    constructor() public {
+        balanceOf[msg.sender] = initialBalance;
+    }
+
     function createPlayer(string memory _name, string memory _imgUrl, uint _price) public {
         uint id = players.push(Player(_name, _imgUrl, _price)) - 1;
         cardToOwner[id] = msg.sender;
