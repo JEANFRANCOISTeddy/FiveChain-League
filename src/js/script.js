@@ -998,10 +998,20 @@ $(document).ready(function() {
   $('.account_address').html(accountAddr);
   
   $('#buy_card').on('click', function() {
-    var id = $('#price_card').val();
-    playerCardContract.methods.buyPlayerCard(id).send({ from: accountAddr, gas: 6721975 }).on('transactionHash', function(hash){
-      console.log(hash);
+    let id = $('#price_card').val();
+    playerCardContract.methods.buyPlayerCard(id).call().then(function(result){
+      $.ajax({
+        type: 'POST',
+        url: '/fivechain-league/src/php/stockage.php',
+        data: { id: id },
+        dataType : 'html',
+        success: function(data)
+        {
+          console.log('ok');
+        }
+      })
     })
+    
   });
 
   $('#create_button').on('click', function() {
