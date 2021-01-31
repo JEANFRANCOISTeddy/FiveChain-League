@@ -1007,7 +1007,8 @@ $(document).ready(function() {
         dataType : 'html',
         success: function(data)
         {
-          console.log('ok');
+          data = JSON.parse(data);
+          console.log(data);
         }
       })
     })
