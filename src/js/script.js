@@ -975,8 +975,8 @@ $("#imgUrl").change(function() {
   readURL(this);
 });
 
-function cardValue(price) {
-  console.log(price);
+function cardId(id) {
+  $('#price_card').attr('value', id);
 }
 
 $(document).ready(function() {
@@ -997,6 +997,13 @@ $(document).ready(function() {
 
   $('.account_address').html(accountAddr);
   
+  $('#buy_card').on('click', function() {
+    var id = $('#price_card').val();
+    playerCardContract.methods.buyPlayerCard(id).send({ from: accountAddr, gas: 6721975 }).on('transactionHash', function(hash){
+      console.log(hash);
+    })
+  });
+
   $('#create_button').on('click', function() {
     var file = $('#imgUrl')[0].files[0];
     var name = $('#name').val();
@@ -1020,7 +1027,7 @@ $(document).ready(function() {
         let path_file = data['path_file'];
         
         playerCardContract.methods.createPlayer(name, path_file, price).send({ from: accountAddr, gas: 6721975 }).on('transactionHash', function(hash){
-          let imgInput = "<img id='' class='player_card' onclick='cardValue(" + price + ")' src='" + path_file + "' width='150px' data-name='" + name + "' data-price='" + price + "'>";
+          let imgInput = "<img id='' class='player_card' onclick='cardId(" + price + ")' src='" + path_file + "' width='150px' data-name='" + name + "' data-price='" + price + "'>";
           imgInput = $.parseHTML(imgInput);
           $('.all_players').append(imgInput);
 
