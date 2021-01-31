@@ -1,10 +1,10 @@
 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
 web3.eth.defaultAccount = web3.eth.accounts[0];
 
-const fiveChainTokenAddr = '0xCeb81f7Aa7294b98FbC9309BbfB1bCB7629E01A8';
-const daiTokenAddr = '0xA402e25f6728927D765589af34a7C86DD4d0C56e';
-const fiveChainTokenSaleAddr = '0xeBcC8f9D94c454980bc008eeFB95C5dF57a2D838';
-const playerCardAddr = '0x9791820A303fF0b553f2F7F060Dc0C22b1801Ce3';
+const fiveChainTokenAddr = '0x0e5cE36167d4680D916f989Af0ed8417Fff44418';
+const daiTokenAddr = '0xB2e57e4c3C4A311cF72303f3ca84B4a09d506349';
+const fiveChainTokenSaleAddr = '0x59f736e6709628A1Dbc0273744dF32D7197B70Ce';
+const playerCardAddr = '0xC98603f6650f71EB3d4B958869A48C4C5AD4f11e';
 
 const fiveChainTokenAbi = [
   {
@@ -975,6 +975,10 @@ $("#imgUrl").change(function() {
   readURL(this);
 });
 
+function cardValue(price) {
+  console.log(price);
+}
+
 $(document).ready(function() {
   daiTokenContract.methods.balanceOf(accountAddr).call().then(function(result){
     var daiTokenBalance = Web3.utils.fromWei(result, 'ether');
@@ -1014,9 +1018,12 @@ $(document).ready(function() {
       {
         data = JSON.parse(data);
         let path_file = data['path_file'];
+        
+        playerCardContract.methods.createPlayer(name, path_file, price).send({ from: accountAddr, gas: 6721975 }).on('transactionHash', function(hash){
+          let imgInput = "<img id='' class='player_card' onclick='cardValue(" + price + ")' src='" + path_file + "' width='150px' data-name='" + name + "' data-price='" + price + "'>";
+          imgInput = $.parseHTML(imgInput);
+          $('.all_players').append(imgInput);
 
-        playerCardContract.methods.createPlayer(name, path_file, price).send({ from: accountAddr }).on('transactionHash', function(hash){
-          console.log(hash);
         })
         .on('confirmation', function(confirmationNumber, receipt){
             console.log(confirmationNumber);
@@ -1029,16 +1036,6 @@ $(document).ready(function() {
           console.log(error);
           console.log(receipt);
         });
-      
-      /*.then(function(result){
-          console.log(result);
-
-          let imgInput = "<img id='' class='player_card' onclick='cardValue()' src='" + path_file + "' width='150px' data-name='" + name + "' data-price='" + price + "'>";
-          imgInput = $.parseHTML(imgInput);
-          $('.all_payers').append(imgInput);
-
-        });*/
-
       }
     })
   });
