@@ -1008,7 +1008,10 @@ $(document).ready(function() {
         success: function(data)
         {
           data = JSON.parse(data);
-          console.log(data);
+
+          let imgInput = "<img id='' class='player_card' onclick='cardId(" + data['price'] + ")' src='" + data['path'] + "' width='150px' data-name='" + data['name'] + "' data-price='" + data['price'] + "'>";
+          imgInput = $.parseHTML(imgInput);
+          $('.my_cards').append(imgInput);
         }
       })
     })

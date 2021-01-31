@@ -25,7 +25,6 @@
     }
 
     $file = array( 'path_file' => $fileDestination );
-    echo json_encode($file);
 
     $_SESSION['cards_number'] = $_SESSION['cards_number'] + 1;
 
@@ -34,5 +33,7 @@
     $_SESSION['card'][$_SESSION['cards_number']]['price'] = $price;
     $_SESSION['card'][$_SESSION['cards_number']]['name'] = $name;
     $_SESSION['card'][$_SESSION['cards_number']]['id'] = $_SESSION['cards_number'] - 1;
+    
+    echo json_encode($file);
 
 ?>
