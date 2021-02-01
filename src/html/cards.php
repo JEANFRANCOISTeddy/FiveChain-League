@@ -2,7 +2,6 @@
 <div>
 <?php 
     session_start();
-    echo var_dump($_SESSION);
 ?>
 </div>
 <html>
