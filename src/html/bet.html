@@ -1,0 +1,160 @@
+s<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+       
+        <title>Betting</title>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/all.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
+    </head>
+
+    <body>
+         <header>
+            <div class="header_menu">
+                <div class="hm_card hm_box">
+                    <a href="cards.html"><i class="fas fa-shopping-cart fa-2x fa_icon"></i>
+                    <h5 class="fa_text pt-1 text_font">CARDS</h5></a>
+                </div>
+                <div class="hm_bet hm_box">
+                    <a href="bet.html"><i class="far fa-futbol fa-2x fa_icon"></i>
+                    <h5 class="fa_text pt-1 text_font">BET</h5></a>
+                </div>
+                <div class="hm_exchange hm_box">
+                    <a href="exchange.html"><i class="fas fa-exchange-alt fa-2x fa_icon"></i>
+                    <h5 class="fa_text pt-1 text_font">EXCHANGE</h5></a>
+                </div>
+            </div>
+            <div class="header_logo">
+                <img class="hl_logo" src="../img/logo.png">
+            </div>
+            <div class="header_account">
+                <h5 class="text_font">YOUR ACCOUNT ADDRESS : </h5>
+                <span class="account_address text_font"></span>
+            </div>
+        </header>
+
+        <div id="accountAddress"></div>
+        <div >
+            <div>
+                <h1 class="text-center">FiveChain Bet</h1>
+            </div>  
+            <div id="openBets" class="row"><h3 class="text-center">Bet FCT Token :</h3>
+                <br>
+                
+                <div class="text-center"><input id="betValue" data-slider-id="betValue" type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="1"/></div><br>
+            </div>
+
+            <hr>
+            
+            <div id="myBets" class="row"><h3 class="text-center">My Bets</h3>
+                <hr>
+                <br>
+            </div>
+            
+            <div id="payoutABet" class="row"><h3 class="text-center">Start Payout</h3>
+                <hr>
+                <br>
+            </div>
+
+            <!-- Add a Bet -->
+            <div class="row" id="addABet"> 
+                <div class="col-xs-12 col-sm-8 col-sm-push-2">
+
+                    <h3 class="text-center">Add Bet</h3>
+                    <hr>
+                    <br>
+                    <form onSubmit="App.addBet(); return false;">
+                        <div class="form-group">
+                            <label for="text">Title</label>
+                            <input type="text" class="form-control" id="TitleBet" value="Tigers vs Bulldogs">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="text">Option</label>
+                                    <input type="text" class="OddsnameTeam form-control" value="Tigers">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="number">Odds value</label>
+                                    <input type="number" class="OddsValue form-control" value=105>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="text">Option</label>
+                                    <input type="text" class="OddsnameTeam form-control" value="Bulldogs">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="number">Odds value</label>
+                                    <input type="number" class="OddsValue form-control" value="-140">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                        <hr/>
+                    </form>
+                </div>
+            </div>
+            <div id="redeem" class="row text-center">
+                
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+        <script src="../js/web3.min.js"></script>
+        <script src="../js/truffle-contract.js"></script>
+        <script src="../js/app.js"></script>
+        <script>
+
+
+         $(function(){
+
+                var slider = $('#betValue').slider({
+                    formatter: function(value) {
+                        return 'Bet Value: ' + value;
+                    },
+                    tooltip: 'always'
+                });
+
+                $("body").on("click", "#openBets .bet-option", function(){
+                    var splitId = this.id.split("-");
+                    var betId = splitId[1];
+                    var OddsDataId = splitId[3];
+                    var betValue = $('input[id="betValue"]').slider('getValue')
+                    console.log(betValue);
+                    // consol.log();
+                    App.bet(betId, OddsDataId, betValue);
+                });
+
+                $("body").on("click", "#openBets .close-bet", function(){
+                    var splitId = this.id.split("-");
+                    var betId = splitId[2];
+                    App.closeBet(betId);
+                });
+
+                $("body").on("click", "#payoutABet .bet-option", function(){
+                    var splitId = this.id.split("-");
+                    var betId = splitId[1];
+                    var OddsDataId = splitId[3];
+                    App.payout(betId, OddsDataId);
+                });
+
+                $("body").on("click", "#redeem", function(){
+                    App.redeem();
+                });
+            });
+        </script>
+    </body>
+</html>
